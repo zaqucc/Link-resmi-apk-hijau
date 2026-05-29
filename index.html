@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINK RESMI APLIKASI HIJAU 2026</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Animasi Background Hijau Cerah & Smooth */
+        body {
+            background: linear-gradient(-45deg, #00ff87, #1db954, #60efff, #107c41);
+            background-size: 300% 300%;
+            animation: brightSmoothGradient 20s ease-in-out infinite;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        @keyframes brightSmoothGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Container Utama */
+        .container {
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            background: rgba(5, 15, 10, 0.75);
+            padding: 35px 25px;
+            border-radius: 24px;
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Profile Section */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00ff87;
+            margin-bottom: 8px;
+            box-shadow: 0 0 12px rgba(0, 255, 135, 0.25);
+        }
+
+        .sub-profile-text {
+            font-size: 0.85rem;
+            color: #00ff87;
+            margin-bottom: 4px;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 2px;
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Warna Emas Berkilau Halus */
+        .verified-badge {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shineGold 4s linear infinite;
+        }
+
+        @keyframes shineGold {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Link/Tombol Section */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* PERUBAHAN BARU: Jarak antar tombol utama dirapatkan dari 15px ke 10px */
+            margin-top: 15px;
+        }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+
+        /* Tombol Utama */
+        .btn-primary {
+            background: linear-gradient(45deg, #00ff87, #60efff);
+            color: #05190e;
+            animation: slimNeonPulse 2.5s infinite ease-in-out;
+        }
+
+        @keyframes slimNeonPulse {
+            0% { transform: scale(1); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 255, 135, 0.25); }
+            50% { transform: scale(1.03); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 255, 135, 0.4); }
+            100% { transform: scale(1); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 255, 135, 0.25); }
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: #00ff87;
+            transform: translateY(-2px);
+        }
+
+        /* List Sub-Download Panel */
+        .sub-links-panel {
+            max-height: 0;
+            overflow-y: auto;
+            transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 0;
+            padding-right: 2px;
+        }
+
+        /* PERUBAHAN BARU: Memberikan sedikit margin bawah pada panel saat terbuka agar tidak menempel ketat dengan tombol WhatsApp di bawahnya */
+        .sub-links-panel.open {
+            max-height: 550px;
+            margin-top: 5px;
+            margin-bottom: 5px; 
+        }
+
+        .sub-links-panel::-webkit-scrollbar {
+            width: 4px;
+        }
+        .sub-links-panel::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 135, 0.3);
+            border-radius: 10px;
+        }
+
+        /* Background #00ff87 */
+        .sub-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #00ff87; 
+            padding: 10px 16px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #05190e; 
+            transition: transform 0.2s ease, background 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .sub-item:hover {
+            transform: scale(1.02);
+            background: #00e074;
+        }
+
+        .sub-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .sub-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #ffffff;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .sub-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #05190e;
+        }
+
+        /* Area Tombol Share */
+        .share-btn-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            border-radius: 50%;
+            transition: background 0.2s ease;
+        }
+        .share-btn-wrapper:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .share-icon {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: #05190e; 
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            pointer-events: none;
+        }
+
+        /* Notifikasi Toast */
+        .toast-notif {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(0, 0, 0, 0.85);
+            color: #00ff87;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 1px solid rgba(0, 255, 135, 0.3);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+            opacity: 0;
+            z-index: 9999;
+        }
+        .toast-notif.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* Footer & Notes Styles */
+        .footer {
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-notes {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.4;
+            max-width: 380px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .copyright {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://i1-e.pinimg.com/1200x/1a/e1/a2/1ae1a2387cc73568d7336d2c23829e61.jpg" alt="Profile Picture" class="profile-img">
+        
+        <div class="sub-profile-text">Kode baru Apk Hijau (Official)</div>
+
+        <div class="title">LINK RESMI APLIKASI HIJAU 2026</div>
+        
+        <div class="verified-badge">Official Premium Link</div>
+
+        <div class="links-container">
+            <div class="btn-link btn-primary" onclick="toggleSubLinks()">DOWNLOAD APLIKASI</div>
+            
+            <div class="sub-links-panel" id="downloadPanel">
+                
+                <a href="https://www.hokiluckwin1.com?code=JDUYMKBNB8F&t=1779228651" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://www.hokiluckwin1.com/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">hokiluckwin</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, 'HOKILUCKWIN', 'https://www.hokiluckwin1.com?code=JDUCRZBPVUA&t=1779219093')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://www.gogorejeki.online?code=CS3AM2B76KA&t=1778217219" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://www.gogorejeki.online/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">GOGOREJEKI</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, 'GOGOREJEKI', 'https://www.gogorejeki.online?code=CS3AM2B76KA&t=1778217219')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://hokiarenaagent30.com/?code=TLSQJFE9TRP&t=1778517058" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://hokiarenaagent30.com/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">HOKIARENA</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, 'HOKIARENA', 'https://hokiarenaagent30.com/?code=TLSQJFE9TRP&t=1778517058')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://rejekihubu258zone.com/?code=4WX1MLZA1NA&t=1778517633" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://rejekihubu258zone.com/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">REJEKI HUB</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, 'REJEKI HUB', 'https://rejekihubu258zone.com/?code=4WX1MLZA1NA&t=1778517633')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://www.rejekigamesagen039.com/?code=APJ32KHDVGF&t=1778513756" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://www.rejekigamesagen039.com/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">REJEKI GAMES</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, 'REJEKI GAMES', 'https://www.rejekigamesagen039.com/?code=APJ32KHDVGF&t=1778513756')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://www.rejekigame065.com/?code=8NQ5EM8DH5L&t=1778514227" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://www.rejekigame065.com/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">REJEKI BET</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, 'REJEKI BET', 'https://www.rejekigame065.com/?code=8NQ5EM8DH5L&t=1778514227')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://winidngame7.com/?code=669TCMMT9TY&t=1778514329" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://winidngame7.com/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">WINIDNBET</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, 'WINIDNBET', 'https://winidngame7.com/?code=669TCMMT9TY&t=1778514329')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://www.jayagames40.com/?code=2C0KMHW81MZ&t=1778514455" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://www.jayagames40.com/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">Jaya Slot</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, 'Jaya Slot', 'https://www.jayagames40.com/?code=2C0KMHW81MZ&t=1778514455')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://898a100.com/?code=W3AQEHSMRZQ&t=1778516736" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://898a100.com/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">898A</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, '898A', 'https://898a100.com/?code=W3AQEHSMRZQ&t=1778516736')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://www.spinhta.cc/?code=M7CXHW7PN62&t=1778517924" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://www.spinhta.cc/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">SpinHarta</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, 'SpinHarta', 'https://www.spinhta.cc/?code=M7CXHW7PN62&t=1778517924')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://www.remi8.icu/?code=VZHW53BVWQD&t=1778519026" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://www.remi8.icu/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">Remi 101</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, 'Remi 101', 'https://www.remi8.icu/?code=VZHW53BVWQD&t=1778519026')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://365111.id/?code=B0J216EJERW&t=1778519856" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://365111.id/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">GEMS 365</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, 'GEMS 365', 'https://365111.id/?code=B0J216EJERW&t=1778519856')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://zk6699.com/?code=RJLTVMXBPUF&t=1778519998" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://zk6699.com/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">ZK6.COM</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, 'ZK6.COM', 'https://zk6699.com/?code=RJLTVMXBPUF&t=1778519998')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://8zkaa.com/?code=HUV5ZQZ3YDB&t=1778520296" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://8zkaa.com/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">8ZK</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, '8ZK', 'https://8zkaa.com/?code=HUV5ZQZ3YDB&t=1778520296')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="http://369zk77.com/?code=FHN4U87QLXP&t=1778520369" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://369zk77.com/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">369ZK</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, '369ZK', 'http://369zk77.com/?code=FHN4U87QLXP&t=1778520369')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://www.99rp.me?code=7UTXV5NBFR6&t=1778520862" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://www.99rp.me/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">99RP</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, '99RP', 'https://www.99rp.me?code=7UTXV5NBFR6&t=1778520862')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+                <a href="https://777-lucky.cc/?code=B3Z57CHTQDV&t=1778520638" target="_blank" class="sub-item">
+                    <div class="sub-left">
+                        <img src="https://777-lucky.cc/logo.png" class="sub-icon" alt="Logo">
+                        <span class="sub-title">777Lucky</span>
+                    </div>
+                    <div class="share-btn-wrapper" onclick="shareApp(event, '777Lucky', 'https://777-lucky.cc/?code=B3Z57CHTQDV&t=1778520638')">
+                        <svg class="share-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </div>
+                </a>
+
+            </div>
+
+            <a href="#" class="btn-link btn-secondary">HUBUNGI ADMIN (WHATSAPP)</a>
+            <a href="#" class="btn-link btn-secondary">JOIN GROUP TELEGRAM</a>
+        </div>
+
+        <div class="footer">
+            <div class="footer-notes">
+                *NB: Kalau link tidak bisa dibuka, gunakan VPN atau ganti DNS jadi 1dot1dot1dot1.cloudflare-dns.com
+            </div>
+            <div class="copyright">
+                © 2026 APLIKASI HIJAU. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-notif" id="toastBox">Tautan berhasil disalin!</div>
+
+    <script>
+        function toggleSubLinks() {
+            const panel = document.getElementById('downloadPanel');
+            panel.classList.toggle('open');
+        }
+
+        function shareApp(event, appName, appUrl) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            if (navigator.share) {
+                navigator.share({
+                    title: appName,
+                    text: 'Mainkan game seru ' + appName + ' lewat link resmi terpercaya ini!',
+                    url: appUrl
+                })
+                .then(() => console.log('Berhasil membagikan!'))
+                .catch((err) => console.log('Gagal membagikan: ', err));
+            } else {
+                navigator.clipboard.writeText(appUrl).then(() => {
+                    showToast('Tautan ' + appName + ' disalin ke papan klip!');
+                }).catch(() => {
+                    showToast('Gagal menyalin tautan.');
+                });
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toastBox');
+            toast.innerText = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
